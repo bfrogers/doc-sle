@@ -595,8 +595,25 @@ MAY (userPassword $ searchGuide $ seeAlso $ businessCategory <co xml:id="co.ldap
       </listitem>
       <listitem>
        <para>
-        
+        Specify the distinguished name (DN) and password of the user under
+        whose name you want to bind to the LDAP directory in <guimenu>DN of
+        Bind User</guimenu> and <guimenu>Password of the Bind User</guimenu>.
        </para>
+       <para>
+        Otherwise, if the server supports it, you can also leave both text
+        boxes empty to bind anonymously to the server.
+       </para>
+       <warning>
+        <title>Authentication Without Encryption</title>
+        <para>
+         When using authentication without enabling transport encryption
+         using TLS or StartTLS, the password will be transmitted in the clear.
+        </para>
+        <remark>
+         Is the YaST dialog compatible with SASL in any way? - sknorr,
+         2017-03-01
+        </remark>
+       </warning>
       </listitem>
      </itemizedlist>
      <para>
@@ -612,7 +629,11 @@ MAY (userPassword $ searchGuide $ seeAlso $ businessCategory <co xml:id="co.ldap
     </step>
     <step>
      <para>
-      To leave the dialog, click <guimenu>OK</guimenu>.
+      To leave the dialog, click <guimenu>OK</guimenu>. Then wait for the
+      setup to complete.
+     </para>
+     <para>
+      Finally, click <guimenu>Finish</guimenu>.
      </para>
     </step>
    </procedure>
